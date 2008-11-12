@@ -6,6 +6,7 @@ module BackgrounDRb
 
       log_flag = BDRB_CONFIG[:backgroundrb][:debug_log].nil? ? true : BDRB_CONFIG[:backgroundrb][:debug_log]
       debug_logger = DebugMaster.new(BDRB_CONFIG[:backgroundrb][:log],log_flag)
+      debug_logger.info('Spinning up BackgroundRb MasterProxy...')
 
       load_rails_env
 
