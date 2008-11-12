@@ -16,6 +16,7 @@ module BackgrounDRb
     def info(data)
       return unless @log_flag
       @logger.info(data)
+      @logger.flush
     end
 
     def debug(data)

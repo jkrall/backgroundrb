@@ -1,9 +1,10 @@
+require RAILS_HOME + "/config/environment"
+
 class LogWorker < Packet::Worker
   set_worker_name :log_worker
   attr_accessor :log_file
 
   def worker_init
-    require "#{RAILS_HOME}/config/environment.rb"
     @log_file = ::ActiveSupport::BufferedLogger.new("#{RAILS_HOME}/log/backgroundrb_#{BDRB_CONFIG[:backgroundrb][:port]}.log")
   end
 
